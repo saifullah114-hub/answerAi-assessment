@@ -1,54 +1,123 @@
-# React + TypeScript + Vite
+# AnswerAI Assessment 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repo contains a React + TypeScript application built as part of the AnswerAI frontend assessment. It features interactive charts, variable selection panels, KPI dashboards, and Firebase authentication.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-## Expanding the ESLint configuration
+1. [⚙️ Tech Stack](#️-tech-stack)
+2. [🛠 Features](#-features)
+3. [🚀 Setup & Local Development](#-setup--local-development)
+4. [🧠 Technical Decisions & Trade-offs](#-technical-decisions--trade-offs)
+5. [⚠️ Known Limitations](#-known-limitations)
+6. [⏱ Time Spent](#-time-spent)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## ⚙️ Tech Stack
+
+- **Frontend**: React 18, TypeScript, Tailwind CSS  
+- **Routing**: React Router v6  
+- **Authentication**: Firebase Authentication (Google OAuth)  
+- **Charts**: Custom SVG-based line chart  
+- **Tooling**: Vite, ESLint, Prettier, TypeScript  
+
+---
+
+## 🛠 Features
+
+- ✅ Responsive layout with desktop-first design
+- ✅ Interactive line chart with:
+  - Data points
+  - Smooth paths and hover interactions
+  - Vertical dashed indicator lines
+  - Interpolated vertical bars between points
+- ✅ Firebase Google Auth integration
+- ✅ Slide-over variable selector with toggle tags
+- ✅ KPI section for quick metrics
+- ✅ Clean component architecture with separation of concerns
+- ✅ Accessibility: ARIA support, keyboard focus, outline, alt labels
+
+---
+
+## 🚀 Setup & Local Development
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/saifullah114-hub/answerAi-assessment.git
+cd answerAi-assessment
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+### 3. Replace Keys in `.env` file
+
+Copy keys provided in email:
+
+
+### 4. Run the app locally
+
+```bash
+npm run dev
+```
+
+Then open `http://localhost:3000`
+
+### 5. Build for production
+
+```bash
+npm run build
+```
+
+---
+
+## 🧠 Technical Decisions & Trade-offs
+
+- **Tailwind CSS**: Speeds up development with consistent styling.
+- **Custom chart logic**: Allows more control over visuals compared to using Chart.js or Recharts.
+- **Firebase Auth**: Quick and scalable for sign-in; no backend logic required.
+- **Component separation**: Reusable UI (Button, Tag, Tooltip) vs page-specific components (Chart, VariablePanel).
+
+---
+
+## ⚠️ Known Limitations
+
+- ❌ No testing suite (Jest, RTL) due to limited time.
+- ❌ Auth is not protected via routes.
+- ❌ Mobile styles work but need polish (e.g., slide-over tightness).
+- ❌ Global error and loading state handling is minimal.
+- ❌ No persistence of state across refresh.
+
+---
+
+## ⏱ Time Spent
+
+| Task                           | Time |
+| ----------------------------- | ---- |
+| Initial setup + Tailwind      | ~1h  |
+| Chart + hover logic           | ~1.5h  |
+| Firebase auth + routing       | ~1h  |
+| Variable panel UI             | ~1.5h  |
+| Final polish + README         | ~1h  |
+| **Total**                     | **~6h** |
+
+---
+
+## ✨ Future Improvements
+
+- [ ] Route protection for auth-only pages
+- [ ] Unit + integration tests
+- [ ] Data API integration for real metrics
+- [ ] Firebase Firestore or Supabase for persistence
+- [ ] Animate chart transitions
+
+---
+
+Thanks for reviewing this project!
+Feel free to reach out if you have questions or feedback 🙌
