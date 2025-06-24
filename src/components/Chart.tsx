@@ -28,7 +28,6 @@ const Chart: React.FC<{
         padding + (index * (chartWidth - 2 * padding)) / (data.length - 1);
     const getY = (value: number) =>
         chartHeight - padding - (value / maxValue) * (chartHeight - 2 * padding);
-
     const createSmoothPath = (points: { x: number; y: number }[]) => {
         if (points.length < 2) return "";
         let d = `M ${points[0].x} ${points[0].y}`;
