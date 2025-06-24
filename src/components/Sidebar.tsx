@@ -37,7 +37,7 @@ const SideBar: React.FC = () => {
 
   const activeIcon = getActiveIcon();
 
-  const handleClick = (name: string, path: string) => {
+  const handleClick = (path: string) => {
     const base = getBaseRoute();
     const fullPath = path === '' ? base : `${base}${path}`;
     navigate(fullPath);
@@ -68,7 +68,7 @@ const SideBar: React.FC = () => {
         {iconItems.map(({ icon: Icon, name, path }) => (
           <button
             key={name}
-            onClick={() => handleClick(name, path)}
+            onClick={() => handleClick(path)}
             className={`p-3 rounded-lg transition-colors ${
               activeIcon === name
                 ? 'bg-[#242424] text-white border border-[#5A5A5A]'

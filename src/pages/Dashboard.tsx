@@ -46,7 +46,7 @@ const Dashboard: React.FC = () => {
         });
         return () => unsubscribe();
     }, []);
-
+console.log(user)
     return (
         <>
             <div className="flex items-center justify-between ">
